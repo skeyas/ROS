@@ -1,4 +1,4 @@
-# The `led_control` package
+# The `prizm_control` package
 
 This is an in-class assignment. Please complete with your partner. Both partners must submit a copy of the code to their own repository.
 
