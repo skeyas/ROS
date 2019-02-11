@@ -18,11 +18,11 @@ Write a node that subscribes to the output of the joystick and publishes to the 
 
 Additionally, the robot should automatically prevent the user from driving the robot into a wall using the IR distance sensor.
 
+The entire program should be launched with a single launch file.
+
 ## Resources
 
-[Joytick Driver](http://wiki.ros.org/joy)
-[ROS Sensor Messages](http://wiki.ros.org/sensor_msgs)
-
-## Packages you will need
-
-https://github.com/LTU-AutoEV/prizm_ros
+  - [Joytick Driver](http://wiki.ros.org/joy)  
+  - [ROS Sensor Messages](http://wiki.ros.org/sensor_msgs)
+  - [prizm_ros](https://github.com/LTU-AutoEV/prizm_ros)
+  - [`rosdep`](http://wiki.ros.org/ROS/Tutorials/rosdep)
