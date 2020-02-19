@@ -13,7 +13,8 @@ void joyCallback(const sensor_msgs::Joy & msg){
 	while(ros::ok())	{
 		geometry_msgs::Twist t;
 		t.linear.x = sqrt(pow(msg.axes[0], 2) + pow(msg.axes[1], 2));
-		t.angular.z = atan2(msg.axes[3], msg.axes[2]);
+		t.angular.z = sqrt(pow(msg.axes[2], 2) + pow(msg.axes[3], 2));;
+		//t.angular.z = atan2(msg.axes[3], msg.axes[2]);
 		velocity_publisher.publish(t);
 		ros::spin();
 	}
