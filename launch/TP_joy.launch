@@ -1,0 +1,10 @@
+<launch>
+	<node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" />
+	<node name="TPcontrol_joy_node" pkg="prizm_control" type="TPcontrol_joy_node" 
+		output="screen" launch-prefix="gnome-terminal -e" />
+	<node name="joy_node" pkg="joy" type="joy_node" />
+    <!-- Launch the joystick node and the prizm control node -->
+
+
+
+</launch>
