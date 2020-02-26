@@ -1,3 +1,6 @@
+//Sriparna Sengupta
+//Homework Six
+
 #include "ros/ros.h"
 #include <sensor_msgs/Joy.h>
 #include <geometry_msgs/Twist.h>
@@ -31,8 +34,6 @@ int main(int argc, char** argv)
 
     ros::Subscriber joySub = nh.subscribe("/joy", 10, //subscribe to topic
 		                  joyCallback);
-
-    // YOUR CODE HERE //
 
     // Don't change these lines
     ROS_INFO_STREAM("prizm_control_node ready!");
