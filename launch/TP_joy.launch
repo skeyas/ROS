@@ -1,4 +1,5 @@
 <launch>
+	<param name="topic_name" type="String" value="/prizm/twist_controller/twist_cmd" />
 	<include file="$(find prizm_ros)/launch/twist_controller.launch" />
 	<node name="joy_control_node" pkg="prizm_control" type="joy_control_node" 
 		output="screen" launch-prefix="gnome-terminal -e" />
@@ -11,4 +12,3 @@
 
 
 </launch>
-
