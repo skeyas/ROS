@@ -1,8 +1,26 @@
 #include "ros/ros.h"
 #include <sensor_msgs/Joy.h>
+#include <geometry_msgs/Twist.h>
 
-void poseCallback(const sensor_msgs::joy & msg){
-	
+void joyCallback(const sensor_msgs::Joy & msg){
+	ros::NodeHandle n;
+	ros::Publisher velocity_publisher = n.advertise<geometry_msgs::Twist>("/prizm/twist_controller/twist_cmd", 1000);
+
+	while(ros::ok())	{
+		ROS_INFO_STREAM(msg);
+		geometry_msgs::Twist t;
+		t.linear.x = sqrt(pow(msg.axes[0], 2) + pow(msg.axes[1], 2)); //calculate velocity 
+									      //based on magnitude
+		if(msg.axes[1] < 0)	{
+			t.linear.x = -t.linear.x;
+		}
+		t.angular.z = sqrt(pow(msg.axes[2], 2) + pow(msg.axes[3], 2));;
+		if((msg.axes[2] < 0 || msg.axes[3] < 0) && (msg.axes[2] < 0 && msg.axes[3] < 0) == false)	{
+			t.angular.z = -t.angular.z;
+		}
+		velocity_publisher.publish(t);
+		ros::spin();
+	}
 }
 
 

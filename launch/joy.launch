@@ -5,10 +5,5 @@
 	<node name="joy_node" pkg="joy" type="joy_node" />
 		<!-- <param name="autorepeat_rate" value="5"/> -->
 
-	<!-- <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" />
-	<node name="TPcontrol_joy_node" pkg="prizm_control" type="TPcontrol_joy_node" 
-		output="screen" launch-prefix="gnome-terminal -e" /> -->
-
-
 </launch>
 
