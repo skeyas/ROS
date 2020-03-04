@@ -1,3 +1,6 @@
+//Sriparna Sengupta
+//Homework Seven
+
 // NOTE: Simply uncomment all lines with a leading "//%"
 //% // Uncomment me!
 
@@ -71,7 +74,7 @@ StopOnWhite::StopOnWhite()
 
     // Default values
     thresh_value_ = 180;
-    paper_detected_ = 0.2;
+    paper_detected_ = 0.3;
 }
 
 
