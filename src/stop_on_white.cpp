@@ -71,7 +71,7 @@ StopOnWhite::StopOnWhite()
 
     // Default values
     thresh_value_ = 180;
-    paper_detected_ = 0.3;
+    paper_detected_ = 0.2;
 }
 
 
@@ -146,7 +146,7 @@ void StopOnWhite::imageCb(const sensor_msgs::ImageConstPtr& msg)
     // If the number of white pixels is above a certain percent, stop
     // YOUR CODE HERE
 
-    	twist.linear.x = 1;
+    	twist.linear.x = 0.5;
 	twist.linear.y = 0;
 	twist.linear.z = 0;
 	twist.angular.x = 0;

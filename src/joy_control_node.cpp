@@ -8,7 +8,7 @@
 
 void joyCallback(const sensor_msgs::Joy & msg){
 	ros::NodeHandle n;
-	std_msgs::String topicName;
+	const std_msgs::String topicName;
 	n.getParam("topic_name", topicName);
 	ros::Publisher velocity_publisher = n.advertise<geometry_msgs::Twist>(topicName, 1000);
 
