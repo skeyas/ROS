@@ -1,10 +1,16 @@
+//Sriparna Sengupta
+//Homework Six
+
 #include "ros/ros.h"
 #include <sensor_msgs/Joy.h>
 #include <geometry_msgs/Twist.h>
+#include <std_msgs/String.h>
 
 void joyCallback(const sensor_msgs::Joy & msg){
 	ros::NodeHandle n;
-	ros::Publisher velocity_publisher = n.advertise<geometry_msgs::Twist>("/prizm/twist_controller/twist_cmd", 1000);
+	std_msgs::String topicName;
+	n.getParam("topic_name", topicName);
+	ros::Publisher velocity_publisher = n.advertise<geometry_msgs::Twist>(topicName, 1000);
 
 	while(ros::ok())	{
 		ROS_INFO_STREAM(msg);
@@ -31,8 +37,6 @@ int main(int argc, char** argv)
 
     ros::Subscriber joySub = nh.subscribe("/joy", 10, //subscribe to topic
 		                  joyCallback);
-
-    // YOUR CODE HERE //
 
     // Don't change these lines
     ROS_INFO_STREAM("prizm_control_node ready!");
