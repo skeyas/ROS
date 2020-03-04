@@ -1,0 +1,10 @@
+
+<launch>
+	<include file="$(find prizm_ros)/launch/twist_controller.launch" />
+	<include file="$(find simple_camera_publisher)/launch/camera_publisher.launch" />
+	<node name="stop_on_white" pkg="prizm_control" type="stop_on_white" 
+		output="screen" launch-prefix="gnome-terminal -e" /> -->
+
+    <!-- YOUR CODE HERE -->
+
+</launch>

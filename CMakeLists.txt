@@ -5,12 +5,24 @@ add_compile_options(-std=c++11)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  std_msgs
+
+  cv_bridge
+  image_transport
+  sensor_msgs
+  dynamic_reconfigure
 )
+
+find_package(OpenCV REQUIRED)
+generate_dynamic_reconfigure_options(cfg/StopOnWhite.cfg)
 
 catkin_package()
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  ${dynamic_reconfigure_PACKAGE_PATH}/cmake/cfgbuild.cmake
+  ${OpenCV_INCLUDE_DIRS}
+  include
 )
 
 # Compile prizm control
@@ -22,3 +34,7 @@ target_link_libraries(TPcontrol_joy_node ${catkin_LIBRARIES})
 
 add_executable(joy_control_node src/joy_control_node.cpp)
 target_link_libraries(joy_control_node ${catkin_LIBRARIES})
+
+add_executable(stop_on_white src/stop_on_white.cpp)
+target_link_libraries(stop_on_white ${catkin_LIBRARIES})
+target_link_libraries(stop_on_white ${catkin_LIBRARIES} ${OpenCV_LIBS})
