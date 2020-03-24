@@ -14,7 +14,8 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 find_package(OpenCV REQUIRED)
-generate_dynamic_reconfigure_options(cfg/StopOnWhite.cfg)
+generate_dynamic_reconfigure_options(cfg/StopOnWhite.cfg cfg/LineFollow.cfg)
+#generate_dynamic_reconfigure_options(cfg/LineFollow.cfg)
 
 catkin_package()
 
@@ -38,3 +39,7 @@ target_link_libraries(TPcontrol_joy_node ${catkin_LIBRARIES})
 add_executable(stop_on_white src/stop_on_white.cpp)
 target_link_libraries(stop_on_white ${catkin_LIBRARIES})
 target_link_libraries(stop_on_white ${catkin_LIBRARIES} ${OpenCV_LIBS})
+
+add_executable(line_follow src/line_follow.cpp)
+target_link_libraries(line_follow ${catkin_LIBRARIES})
+target_link_libraries(line_follow ${catkin_LIBRARIES} ${OpenCV_LIBS})
