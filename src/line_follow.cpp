@@ -68,12 +68,9 @@ LineFollow::LineFollow()
 
     // Default values
     thresh_value_ = 180;
-	lowHue = 90;
-	highHue = 150;
-	lowSat = 150;
-	highSat = 255;
-	lowLum = 0;
-	highLum = 255;
+	lowHue = 180;
+	highHue = 255;
+	lowSat = 90;
 }
 
 
