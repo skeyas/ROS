@@ -1,0 +1,10 @@
+<launch>
+	<include file="$(find prizm_ros)/launch/twist_controller.launch" />
+	<include file="$(find simple_camera_publisher)/launch/camera_publisher.launch" />
+
+	<node name="line_follow" pkg="prizm_control" type="line_follow" 
+		output="screen" launch-prefix="gnome-terminal -e" /> -->
+
+    <!-- YOUR CODE HERE -->
+
+</launch>
