@@ -10,4 +10,4 @@ This assignment consists of the files joy_control_node.cpp and TP_joy.launch. It
 # Homework Seven
 
 # Homework Eight-One
-This assignment consists of the files 
+This assignment consists of the files line_follow.cpp and line_follow.launch. It tracks which section of the image received by the camera contains the most blue pixels and outputs to the user which direction to turn based on that.
