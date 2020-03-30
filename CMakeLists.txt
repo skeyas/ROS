@@ -43,3 +43,7 @@ target_link_libraries(stop_on_white ${catkin_LIBRARIES} ${OpenCV_LIBS})
 add_executable(line_follow src/line_follow.cpp)
 target_link_libraries(line_follow ${catkin_LIBRARIES})
 target_link_libraries(line_follow ${catkin_LIBRARIES} ${OpenCV_LIBS})
+
+add_executable(line_follow_sim src/line_follow_sim.cpp)
+target_link_libraries(line_follow_sim ${catkin_LIBRARIES})
+target_link_libraries(line_follow_sim ${catkin_LIBRARIES} ${OpenCV_LIBS})
