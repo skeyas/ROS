@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="prizm_control" type="line_follow_sim" name="line_follow_sim" output="screen" launch-prefix="gnome-terminal -e"/>
+</launch>
