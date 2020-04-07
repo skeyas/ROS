@@ -14,8 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 find_package(OpenCV REQUIRED)
-generate_dynamic_reconfigure_options(cfg/StopOnWhite.cfg cfg/LineFollow.cfg)
-#generate_dynamic_reconfigure_options(cfg/LineFollow.cfg)
+generate_dynamic_reconfigure_options(cfg/StopOnWhite.cfg cfg/LineFollow.cfg cfg/MoveToObject.cfg)
 
 catkin_package()
 
@@ -47,3 +46,7 @@ target_link_libraries(line_follow ${catkin_LIBRARIES} ${OpenCV_LIBS})
 add_executable(line_follow_sim src/line_follow_sim.cpp)
 target_link_libraries(line_follow_sim ${catkin_LIBRARIES})
 target_link_libraries(line_follow_sim ${catkin_LIBRARIES} ${OpenCV_LIBS})
+
+add_executable(move_to_object src/move_to_object.cpp)
+target_link_libraries(move_to_object ${catkin_LIBRARIES})
+target_link_libraries(move_to_object ${catkin_LIBRARIES} ${OpenCV_LIBS})

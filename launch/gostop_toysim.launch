@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="prizm_control" type="gostop_node" name="go_stop" output="screen" />
+</launch>
