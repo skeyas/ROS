@@ -16,5 +16,5 @@ This assignment consists of the files line_follow.cpp and line_follow.launch. It
 # Homework Nine
 This assignment consists of the files line_follow_sim.cpp and line_follow_sim.launch. It tracks which section of the image from the Gazebo contains the most blue pixels and moves the simulated robot in that direction.
 
-#Homework Ten
+# Homework Ten
 This assignment consists of the files move_to_object.cpp and move_to_object.launch. It moves the simulated robo in the direction of the nearest object tracked by the LIDAR.
