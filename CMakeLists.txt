@@ -11,6 +11,10 @@ find_package(catkin REQUIRED COMPONENTS
   image_transport
   sensor_msgs
   dynamic_reconfigure
+
+  route_publisher
+  move_base_msgs
+  nav_msgs
 )
 
 find_package(OpenCV REQUIRED)
@@ -50,3 +54,7 @@ target_link_libraries(line_follow_sim ${catkin_LIBRARIES} ${OpenCV_LIBS})
 add_executable(move_to_object src/move_to_object.cpp)
 target_link_libraries(move_to_object ${catkin_LIBRARIES})
 target_link_libraries(move_to_object ${catkin_LIBRARIES} ${OpenCV_LIBS})
+
+add_executable(route_follower src/route_follower.cpp)
+add_dependencies(route_follower ${catkin_EXPORTED_TARGETS})
+target_link_libraries(route_follower ${catkin_LIBRARIES})
