@@ -20,4 +20,4 @@ This assignment consists of the files line_follow_sim.cpp and line_follow_sim.la
 This assignment consists of the files move_to_object.cpp and move_to_object.launch. It moves the simulated robot in the direction of the nearest object tracked by the LIDAR.
 
 # Homework Eleven
-This assignmen consists of the route_follower.cpp file. It moves the robot through the points provided by the route_publisher file.
+This assignment consists of the route_follower.cpp file. It moves the robot through the points provided by the route_publisher file.
