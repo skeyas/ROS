@@ -1,6 +1,5 @@
-/* Note: This started code is not complete and will not run
- * It should be used as a skeleton for the final project node
- */
+//Sriparna Sengupta
+//Final Project
 
 #include <ros/ros.h>
 #include <route_publisher/Route.h>
@@ -8,8 +7,6 @@
 #include <nav_msgs/Odometry.h>
 #include <geometry_msgs/Point.h>
 #include <geometry_msgs/Twist.h>
-// Any others...
-
 #include <vector>
 #include <math.h>
 
@@ -70,13 +67,12 @@ private:
 	ros::Publisher final_twist_pub_;
     ros::Subscriber route_sub_;
     ros::Subscriber odom_sub_;
-    // Subscribers for each node...
 
+    // Subscribers for each node
 	ros::Subscriber line_follow_sub;
 	ros::Subscriber go_to_waypoint_sub;
 	ros::Subscriber go_to_obstacle_sub;
 	
-
     route_publisher::Route current_route_;
     int route_index_;
     bool is_executing_;
@@ -116,8 +112,6 @@ RobotCommander::RobotCommander() : nh_{"~"}
 
     // Publisher for robot
      final_twist_pub_ = nh_.advertise<geometry_msgs::Twist>("/prizm/twist_controller/twist_cmd", 10);
-	//goal_pub_ = nh_.advertise<geometry_msgs::Twist>("/prizm/twist_controller/twist_cmd", 10);
-
     route_index_ = 0;
 }
 
@@ -198,6 +192,8 @@ void RobotCommander::lineFollowCallback(const geometry_msgs::Twist& twist)
 }
 
 void RobotCommander::gotoCallback(const geometry_msgs::Twist& twist)	{
+	// If we are not in the go to state, ignore this message
+	// Otherwise execute normally
 	if(current_state_ != GOTO)	{
 		return;
 	}
@@ -205,12 +201,16 @@ void RobotCommander::gotoCallback(const geometry_msgs::Twist& twist)	{
 }
 
 void RobotCommander::findObstacleCallback(const geometry_msgs::Twist& twist)	{
+	// If we are not in either the search state or the avoid state, ignore this message
+	// Otherwise execute normally
 	if(current_state_ != SEARCH && current_state_ != AVOID)	{
 		return;
 	}
 	if(current_state_ == SEARCH)	{
 		final_twist_pub_.publish(twist);
 	}
+
+	//If in the avoid state, invert the direction of the twist message before publishing
 	if(current_state_ == AVOID)	{
 		geometry_msgs::Twist t;
 		t.linear.x = twist.linear.x;

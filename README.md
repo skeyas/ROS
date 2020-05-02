@@ -21,3 +21,6 @@ This assignment consists of the files move_to_object.cpp and move_to_object.laun
 
 # Homework Eleven
 This assignment consists of the route_follower.cpp file. It moves the robot through the points provided by the route_publisher file.
+
+# Final Project
+This assignment consists of files commander.cpp and robot_commander.launch. It uses the nodes written in assignments nine and ten to follow lines and move to objects. The move_to_object node is used both to move to an object and to avoid objects. The assignment also uses the provided node goto node to move to point.
