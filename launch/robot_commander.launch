@@ -1,0 +1,6 @@
+<launch>
+	<node name="line_follow_sim" pkg="prizm_control" type="line_follow_sim" />
+	<node name="move_to_object" pkg="prizm_control" type="move_to_object" />
+    <node name="commander" pkg="prizm_control" type="commander" 
+		output="screen" launch-prefix="gnome-terminal -e" /> -->
+</launch>

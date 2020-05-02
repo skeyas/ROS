@@ -58,3 +58,7 @@ target_link_libraries(move_to_object ${catkin_LIBRARIES} ${OpenCV_LIBS})
 add_executable(route_follower src/route_follower.cpp)
 add_dependencies(route_follower ${catkin_EXPORTED_TARGETS})
 target_link_libraries(route_follower ${catkin_LIBRARIES})
+
+add_executable(commander src/commander.cpp)
+add_dependencies(commander ${catkin_EXPORTED_TARGETS})
+target_link_libraries(commander ${catkin_LIBRARIES} ${OpenCV_LIBS})

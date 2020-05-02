@@ -1,0 +1,28 @@
+<launch>
+
+    <arg name="course" default="course1" />
+    <arg name="route"  default="route1" />
+
+    <!-- Launch the sim -->
+    <include file="$(find ackermann_vehicle_gazebo)/launch/ackermann_vehicle.launch">
+        <arg name="world_name" value="$(arg course)" />
+    </include>
+
+    <!-- Launch the route publisher -->
+    <include file="$(find route_publisher)/launch/publish_route.launch">
+        <arg name="route" value="$(arg course)_$(arg route)" />
+    </include>
+
+    <!-- Run the GoTo node -->
+    <node pkg="route_publisher" name="goto_node" type="goto.py">
+        <!-- Twist Output Topic -->
+        <!-- Use this topic to test this node directly -->
+        <!--<param name="twist_topic" value="/prizm/twist_controller/twist_cmd" />-->
+            <!-- Use this topic for project integration -->
+        <param name="twist_topic" value="/robot_commander/goto/twist_cmd" />
+
+        <param name="odom_topic"  value="/car/odom" />
+        <param name="goal_topic"  value="/goto_node/goal" />
+    </node>
+
+</launch>

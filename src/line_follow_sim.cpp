@@ -48,7 +48,7 @@ LineFollow::LineFollow()
     image_sub_ = it_.subscribe("/car/camera1/image_raw", 1, &LineFollow::imageCb, this);
 	ros::NodeHandle n;
     // Publish on the twist command topic
-	pub_ = nh_.advertise<geometry_msgs::Twist>("/prizm/twist_controller/twist_cmd", 10);
+	pub_ = nh_.advertise<geometry_msgs::Twist>("/robot_commander/line_follow/twist_cmd", 10);
 
 	geometry_msgs::Twist twistMsg;
 

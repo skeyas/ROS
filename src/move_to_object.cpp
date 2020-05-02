@@ -66,7 +66,7 @@ FindObstacle::FindObstacle() : nh_{"~"}
     scan_sub_ = nh_.subscribe(scan_sub_topic, 5, &FindObstacle::scanCb, this);
 
     // Publish on the twist command topic
-    pub_ = nh_.advertise<geometry_msgs::Twist>("/prizm/twist_controller/twist_cmd", 10);
+    pub_ = nh_.advertise<geometry_msgs::Twist>("/robot_commander/avoid_obstacle/twist_cmd", 10);
 
     // Dynamic Reconfigure
     server_.setCallback(boost::bind(&FindObstacle::configCallback, this, _1, _2));
